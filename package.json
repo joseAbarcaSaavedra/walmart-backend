@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --exec babel-node src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha test/index.js",
     "transpile": "babel ./src --out-dir dist",
-    "clean": "rimraf dist-server"
+    "clean": "rimraf dist-server",
+    "build": "npm run clean && npm run transpile"
   },
   "keywords": [],
   "author": "José Abarca Saavedra",
@@ -30,6 +31,7 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "supertest": "^6.1.3"
   }
 }
