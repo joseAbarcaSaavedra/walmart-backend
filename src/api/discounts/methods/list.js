@@ -3,7 +3,7 @@ import Discounts from './../model'
 
 /**
  * @author: jabarca
- * @description: Return a list of available product discounts in DB. By default endpoint return only positive discounts & sorted desc
+ * @description: Return a list of available product discounts in DB. By default endpoint return only positive discounts & sorted by discount amount desc
  */
 export default async (req, res) => {
   try {
@@ -24,7 +24,6 @@ export default async (req, res) => {
 
     const discounts = await Discounts.find(query).sort(sort).lean()
 
-    
     // TODO - Add pagination
     // TODO - Add cache
 

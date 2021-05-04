@@ -1,5 +1,9 @@
 import { handleError, handleResponse } from './../../../helpers/httpResponse'
 import Products from './../model'
+
+/**
+ * @description: Return a list of available product in DB.
+ */
 export default async (req, res) => {
   try {
     const products = await Products.find({}).lean()
